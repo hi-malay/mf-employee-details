@@ -38,6 +38,6 @@ jobs:
           git config --global user.name "github-actions-bot"
           git config --global user.email "support+actions@github.com"
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-          npx gh-pages -d dist -f
+          npx gh-pages -x -d dist -f
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
