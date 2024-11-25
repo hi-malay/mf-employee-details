@@ -1,8 +1,18 @@
-const singleSpaAngularWebpack = require('single-spa-angular/lib/webpack').default;
+const singleSpaAngularWebpack =
+  require("single-spa-angular/lib/webpack").default;
 
-module.exports = config => {
+module.exports = (config) => {
   const singleSpaWebpackConfig = singleSpaAngularWebpack(config);
 
-  // Feel free to modify this webpack config however you'd like to
+  singleSpaWebpackConfig.devServer = {
+    ...singleSpaWebpackConfig.devServer, // Retain existing devServer config if any
+    host: "0.0.0.0",
+    port: 4200,
+    historyApiFallback: true,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
+  };
+
   return singleSpaWebpackConfig;
 };
