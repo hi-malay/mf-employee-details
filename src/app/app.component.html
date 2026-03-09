@@ -1,0 +1,28 @@
+<div *ngIf="employee">
+  <div class="mf-section-banner">
+    <span class="mf-section-title">&#64;mf-demo/employee-details</span>
+    <span class="mf-framework-tag mf-framework-tag--angular">Angular</span>
+  </div>
+
+  <a class="mf-back-btn" href="/employees">Back to Employees</a>
+
+  <div class="mf-detail-card" style="margin-top: 1rem;">
+    <div class="mf-detail-header">
+      <div class="mf-detail-id">{{ employee.id }}</div>
+      <h1 class="mf-detail-title">{{ employee.title }}</h1>
+    </div>
+    <div class="mf-detail-body">
+      {{ employee.body }}
+    </div>
+    <div class="mf-detail-footer">
+      <span class="mf-footer-badge">Employee #{{ employee.id }}</span>
+      <span class="mf-framework-tag mf-framework-tag--angular">Angular</span>
+    </div>
+  </div>
+</div>
+
+<div class="mf-loader" *ngIf="!employee">
+  <div class="mf-spinner" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
